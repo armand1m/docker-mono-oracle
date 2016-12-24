@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t armand1m/docker-mono-oracle .
+  - docker build -t armand1m/mono-oracle .
 
 script:
   - docker images
@@ -14,5 +14,5 @@ script:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$HUB_USERNAME" -p="$HUB_PASSWORD";
-    docker push armand1m/docker-mono-oracle;
+    docker push armand1m/mono-oracle;
     fi
